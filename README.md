@@ -42,6 +42,7 @@ yarn server
 ## 사용한 기술스택
 
 - react18
+- next14
 - json-server
 - react-router-dom
 - react-query@5 version
