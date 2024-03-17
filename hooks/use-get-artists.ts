@@ -1,0 +1,21 @@
+import APIs from "@/apis";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
+
+const useArtists = () => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["artists"],
+    queryFn: APIs.getArtists,
+    retry: 3,
+    gcTime: 1000 * 60 * 10,
+    staleTime: 1000 * 60 * 3,
+  });
+
+  return {
+    data,
+    isLoading,
+    error,
+  };
+};
+
+export default useArtists;
